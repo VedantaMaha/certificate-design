@@ -9,8 +9,8 @@
 ## Conditions:
 
 * if student pass all the block:
-- receive certificate of title
-- receive certificate supplement
+    - receive certificate of title
+    - receive certificate supplement
 
 * if student that has at least 1 fail:
-- receive certificate for each block he PASS (Block Certificate)
+    - receive certificate for each block he PASS (Block Certificate)
