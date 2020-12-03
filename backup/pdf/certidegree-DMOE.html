@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>pdf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+  @font-face {
+    font-family: "BerkeleyStd-Black";
+    src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Black.otf") format("opentype")
+  }
+
+  @font-face {
+    font-family: "BerkeleyStd-Bold";
+    src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Bold.otf") format("opentype")
+  }
+
+  @font-face {
+    font-family: "BerkeleyStd-Medium";
+    src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Medium.otf") format("opentype")
+  }
+
+  body {
+    height: 100%;
+    min-height: 100%;
+    width: 98%;
+    text-align: center;
+    /* margin: 11px; */
+  }
+
+  .border-one {
+    border: 2px solid #AC8D0E;
+    padding: 1px;
+    height: 576px;
+  }
+
+  .border-two {
+    border: 1px solid #AC8D0E;
+    padding: 1px;
+    height: 572px;
+  }
+
+  .border-three-1 {
+    border: 2px solid #AC8D0E;
+    padding: 8px 1px 1px 1px;
+    height: 560px;
+  }
+
+  .background {
+    background-image: url('{{options.API_BASE}}assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .grey-text {
+    color: #99A6AC;
+  }
+
+  .font-size-10 {
+    font-size: 10px;
+  }
+
+  .font-size-11 {
+    font-size: 11px;
+  }
+
+  .font-size-12 {
+    font-size: 12px;
+  }
+
+  .font-size-14 {
+    font-size: 14px;
+  }
+
+  .font-size-44 {
+    font-size: 44px;
+  }
+
+  .font-size-48 {
+    font-size: 48px;
+  }
+
+  .font-size-42 {
+    font-size: 42;
+  }
+
+  .font-style-black {
+    font-family: "BerkeleyStd-Black", sans-serif;
+  }
+
+  .font-style-medium {
+    font-family: "BerkeleyStd-Medium", sans-serif;
+  }
+
+  .font-style-bold {
+    font-family: "BerkeleyStd-Bold", sans-serif;
+  }
+
+  .gold-text {
+    color: #B9962D;
+    font-size: 25px;
+    height: 90px;
+  }
+
+  .bold-font {
+    font-weight: bold;
+  }
+
+  .first-letter {
+    font-size: 45px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .thrree-column {
+    float: left;
+    width: 33.33%;
+  }
+
+  .signature-box {
+    width: 20%;
+    padding-bottom: 50px;
+    border-bottom: 2px solid black;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .signature-line {
+    width: 50%;
+  }
+
+  .signature-props {
+    max-width: 80px;
+    height: 60px;
+  }
+
+  .logo {
+    background-image: url('{{options.API_BASE}}assets/logos/c3-institutelogo.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 269px;
+    height: 90px;
+  }
+
+  .negativeMargin35px {
+    margin-bottom: -35px;
+  }
+
+  .negativeMargin24px {
+    margin-bottom: -24px;
+  }
+
+  .marginBottom22px {
+    margin-bottom: 18px;
+  }
+
+  .marginBottom8px {
+    margin-bottom: 6px;
+  }
+
+  #myContainer {
+    zoom: 0.9;
+  }
+
+  .dmoeImg {
+    height: 105px;
+  }
+
+  .bigName {
+    display: none;
+  }
+
+  .shortName {
+    display: block;
+    padding-top: 20px;
+  }
+
+</style>
+
+<body>
+  <div id="myContainer" class="border-one">
+    <div class="border-two">
+      <div class="border-three-1">
+        <br>
+        <span class="grey-text font-style-black font-size-14">
+          Conformément à la délibération du jury,
+        </span>
+        <br>
+        <div class="background">
+          <span class="grey-text font-style-black font-size-14">
+            le 20 Septembre 2018
+          </span>
+          <br>
+          <div class="gold-text font-style-bold font-size-48">
+            <div class={{options.paddingTopOnStudentName}}></div>
+            {{#each options.studentNameWithCivility}}
+            <span class="first-letter">{{firstChar this}}</span>{{exceptFirstChar this}} {{/each}}
+            <strong class="first-letter font-size-42">{{options.studentLastName}}</strong>
+          </div>
+          <br>
+          <span class="grey-text font-style-black font-size-11">
+            {{options.salutation}} {{options.placeOfBirth}} le {{options.dateOfBirth}}
+          </span>
+          <br>
+          <span class="grey-text font-style-black font-size-11">
+            a reçu le titre de
+          </span>
+          <br>
+          <span>
+            <img class="dmoeImg" src="{{options.API_BASE}}assets/Texte_DMOE.jpg">
+          </span>
+          <br>
+          <div class="marginBottom22px">
+            <span class="grey-text font-style-black font-size-11">
+              {{options.nonVariableTextOne}}
+            </span>
+            <br>
+          </div>
+          <div class="marginBottom8px">
+            <span class="grey-text font-style-black font-size-14">
+              Pour en jouir avec droits et prérogatives qui y sont attachés.
+            </span>
+          </div>
+          <br>
+        </div>
+        <div class="row">
+          <div class="thrree-column">
+            <span class="grey-text font-style-bold font-size-12">
+              Le Président du Jury
+            </span>
+            <div>
+              <img class="signature-props" src="{{options.API_BASE}}assets/signature_parquet.jpg">
+            </div>
+            <hr class="signature-line">
+            <span class="grey-text font-style-medium font-size-12">
+              Eric Parquet
+            </span>
+          </div>
+          <div class="thrree-column logo">
+
+          </div>
+          <div class="thrree-column">
+            <span class="grey-text font-style-bold font-size-12">
+              Le Récipiendaire
+            </span>
+            <div style="height:60px">
+            </div>
+            <hr class="signature-line">
+            <span class="grey-text font-style-medium font-size-12">
+              {{options.studentName}}
+            </span>
+          </div>
+        </div>
+        <br>
+        <span class="grey-text font-style-medium font-size-10">
+          Autorité de certification : C3 Institute 101 Rue de la Fontaine Grelot 92160 Antony Tél. 01 42 37 12 34 -
+          www.c3groupe.com
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pdf</title>
+  <style>
+    @font-face {
+      font-family: "BerkeleyStd-Black";
+      src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Black.otf") format("opentype")
+    }
+
+    @font-face {
+      font-family: "BerkeleyStd-Bold";
+      src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Bold.otf") format("opentype")
+    }
+
+    @font-face {
+      font-family: "BerkeleyStd-Medium";
+      src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Medium.otf") format("opentype")
+    }
+      .font-style-black {
+      font-family: "BerkeleyStd-Black", sans-serif;
+    }
+
+    .font-style-medium {
+      font-family: "BerkeleyStd-Medium", sans-serif;
+    }
+
+    .font-style-bold {
+      font-family: "BerkeleyStd-Bold", sans-serif;
+    }
+    .container {
+      height: 579px;
+      width: 819px;
+      margin: auto;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container-background {
+      background-image: url("{{options.API_BASE}}assets/RDC_background_new.jpg"); 
+      background-size: 100%;
+      height: inherit;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .date-field {
+      position: absolute;
+      top: 16.7%;
+      left: 46.5%;
+      width: 100%;
+      font-size: 14px;
+    }
+    .first-field {
+      position: absolute;
+      top: 27%;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+    }
+    .second-field {
+      position: absolute;
+      top: 35%;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container-background">
+      <div class="date-field font-style-bold">
+        <p>30 Septembre 2019</p>
+      </div>
+      <div class="first-field font-style-bold">
+        <p>{{options.salutary}} {{options.studentName}}</p>
+      </div>
+      <div class="second-field font-style-medium">
+        <p>{{options.middleSalutation}} {{options.dateOfBirth}} à {{options.placeOfBirth}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

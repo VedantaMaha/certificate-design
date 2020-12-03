@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .container {
+      padding: 10px;
+      font-family: Roboto,sans-serif;
+    }
+    .header {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .logo-container {
+      display: inline-block;
+    }
+    .logo-container img {
+      max-height: 50px;
+    }
+    .title-container {
+      display: inline-block;
+      text-align: center;
+      margin-left: 30px
+    } 
+    .title-container h3 {
+      font-size: 18px;
+    }
+    table {
+      border-collapse: collapse;
+      color: #3c6e9f;
+      margin: auto;
+    }
+    table, th, td {
+      border: 1px solid #4e82bc;
+      padding: 20px;
+    }
+    table tr td {
+      background-color: #d3dfef;
+      font-weight: 600;
+    }
+    .left-data {
+      padding-top: 20px;
+    }
+    .left-data p {
+      font-size: 16px;
+      margin: 50px 0;
+    }
+    .right-data {
+      margin: 15px 0;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .right-data p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  </style>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAABXCAYAAAAj4nFLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAADNVJREFUeNrsXbFy20gSHV052Yi8xMkGpJMNNhF9PyCoypmrTtz0EsEbXmLoCwR9gehkwxWUbGqq6rILDP/AmUocbGIo2MQRFW2om5Z6VmMIJDGDATgDvleFkmWRGPTM9JvunkbP3t3dnQAAwo//OB3LHxPtGsqL/m+kfexGXoW8lvJaqOvz/84Kj+VS8pAsEf83ybZf+uhH/lnwlUu58gDHjHBQ8fGP2r9z7WfRZPz2/vnf/zjvpKtXr6MQlObP35+3MUGS7374ujCYBJE2sddCDnTakoLF8pqWyMIU1zwhZ9smFFasKffrkYspLa85XVK2pQfEMdXkGzm67S2PX85yFiYkctcCiewFQiJtmGGHkkRygwlBxHBak0T2HE5EmoDpihWrKWjFS7texVm5YkfEsQqXLFvRsWxEjAnLN+igSVoUMro2EeczGPE76bJkLZGH0EzpD7ItWsGTthVOthMzIY466MJjumSb75hMlh2MV8rtdgly9c6pbfkMM7YwK2X9G9Rqpwgk5hjGQUdNkkWwYAuhlViHvMjaueiIQHS8ZdmilmQbsvJ+2QKB6BiwpVzI50lAIrtNIBkr22ALk/A9u20u5aH7feqQEKswYosrcSxbxGT/1qMpRON4TqRNBAcS2U0COd7yY0wdyTJk6+PUoy4+5z52IR8R0octWFYmrmrBAfm1MREKqiQ7oF+HDb47E0+3CH0kkMQDAqH5FDmQheIDc0/7neIkFPyOAyf7ulYJjcN4HYksr169zvvOICa7KGX8+fvzZQAEQqvFuQ8E0jQAybLkW3DHOiGSgAiEcKtbltid6TdmDb6rksp0oo3E0+SzLghkyCufKwKh51qWZKM2VMJWk3Yo2Ds22ZFyTCBq3NSlMNauUUMCoTFdgET6HweJhXnQ8ZaJJ1unBFoyV7JmQjohEEbuYOKTolIG6rym1RML8wQ8421fR+6mSobL65AXk3LE8k0NSPMJgYBE+g1Tk7q20vNEvc8dYLKalSYiTbbYBYHwNqdtDOSGlToz+RIrCSl3wrtAyQZFU/LODWWLGrqbVolvPC5zvtSCs2nRqSQQAnZn+mmFDA2tEGurgRU04nusnWwWctB9bbc5z8i1MCWQCvlSdnGu1/TdxIJAhmwd2YAygl9Q7MVFIh/1kbyor39i4q1NICCR/iIyNPUbWQ08uWKegK4IxFbJSJ6XpPyusklZUSNe+b8hKvm3iaUip5YuGrUZtZEFzEQ4Kcm5cVGAO9NPTAw+m7lQer7H2KEMiYWSuYzDVLkAMe2+qFiC7btBHFOysbDeNLWsDOTM2U3duCiARPoJE2XOfXt4tkISXwikpGSkYMOG7aQ+EkiFm1qrPbgzIBEf8102BTKdu2QWq7UtQdLYmO7GnHRJIKYAiQA+wtQKiV24ZB3B1Aq5krLNfBYIJAJMfHoY3m4cGCrZPKD+NnmH6N7C8l0gkEg/YWJuJwErmY/P75IgZz5UUgOJ7CZMTPuRqzdQHSgZBVRNqpJd+lzbtQKRoRUyC0EokEg/YapY9OLYvFwnwnMls4kvhGRlBWGFEGiL98zBJNxF0Oqde9p3ucV3yAIoNpXCaxkm8ZnrkKwQfh9nYDi/gsCzq1evU/CBOb774au3g0zKJSct5U2YvnOiSuEl7OJ0Xbk96qOS9Z0g4c70F038aSITyqj8IsmE6ogmnN/gk6LlgY3HuK+yIWO1p6DkJH7NvGkVMFX1+5ytG7IA5i2tlAMD+RaBDYmJleWcRDiNvQ0kIJF+IxZuq4HphHIjHs8lKRxMchMl+9jzcWuDoNsqaD2EO9Nva0TVxWgD9HLcKbs8WVtHJ/QIE8NxCwYgkR1wa+SPNy03Q++CfGAyGXcgVh7gUAz6OsdAIrtDJFRw5rYDMllwZiawIwCJ7A6RqIIzbccTaMW94HwTACQC9IxICi6Dd9gBmbz1JZ0eAIkA7skk18jksk33piXXJsIogkQAf8iElPzv4iH4SoTiOm5yoR+5uMOo3a+h9RfyRABVqSvjiyaxOo/E5EySdZg5th4OAuzmhcFzj4XZm9h1YOK+0ouYtZMUQSJAFamUzyQhMjlqovSUR7KusDH9jYsg116tA8xarYuJ6n+HYxoZ9C199gPcGcDV5KOMVCKRF6JZ/CR2afKL8OIiucFnpyEJBhIB6pJJwfGTl2L1QU5NlX7h+H4+oTD47L4HtV1AIkBrZLKgA5ssrJJRDcUwWa2PQlI0YZ5lG4ciGEgEsCUTmuRXFr6+S0VLAuovskRu+igbSARogsSxohGJmMRFksCsEZNg6SiUlxpBIkDT1fV6i4o2CGnFFuY7LhlIBNgF5I7vZ6o4XVVdc2Vpmbg0Iy4sBRIBeo3llhVtIMKqt2r6YmLqewYrSARoijYmeGr4+YMuX/bjuimZZTyGntMk7kMkOfc59gMS2RFQ5imdLdPCrSODzxY1rZHM0BohHHdBJJzBeywea6cYkSi/YmBqjVAVudxXIgGJ7AiByB8X4iG3InV430TUf7fm1rAWq00soFUi0fpRV+5PFn06syDJfSaSMUgE2BaBKJy6CNbxfc8NvpIbrthkNV1ZEolzZeMiSxcr/nxq0iZbIzZjsM/WzxQkAnRFIOmKiX/e5NjMCmKqAxtXKhZ2pQkOWNlSB3045uMW3tZsM26ZJMnye8/jN25hztDzG1lze3d3d9C27Sv6ac2Jt2dw34z99rUuBpvWtY7NZNJJ6j5vqZ2xzdGcvOq+b9DFVkdbsIKmNfqwCkQO8SZ5uT8X7BbZ4pLHb9FgDk6YsKcWz3IIEukhidQkkLKSz9nlWOgTkicYXZGwry9yJu+ZNuijxNB1WoVrlpPkK0pyDllOpVBND/06XFf6oNS/uWhet+WG70NXweO4rGiL5BzzFbG8TdoGifSNRCwIpG1YWyGey+WMNB0SyTZwiJhIvwgp8VDR4qYEwgQai3brwbrCpanVxRZRJNo/0qMVgET6hUy4f5elCd5xANEJmEhOPCeQ2FK2YIkEJNIj8IofeUIkpFBJCzJSIPgnD5XNmkBKREKxipDOGl6CRPpLJFchK9QGGeesbFcedDmR2RtX8tL4cT3UM8+tEnItXxDxgUR6SiRcF/Wk44noVKFqykhWyc2Wuposhgmn6buWLxUPOyc+xYFofN8xecRqyxy7M1tGW3ki2v1pxaY22g640mRPDVPbXfZjzHKOOiKPtM4WriPZiEy2GTQni2++iixBIj0nkRKZxHy5UjSVX7I18qiQMxKPiVMut0yVrFlX5LFiDKfCTR7LOug5J/NNu2sgkd0krglPxkiYJxtdqwnmcuelRUKJhH1SFVkcCx9l1QhFJQKOGhBGwXIqWY0WBJAIoGdrCvH01f4lT65l6IdFleRU2Zs6FixvkLJqGam6nDoK8ViOwZmMIBEAABoBuzMAAIBEAAAAiQAAECie/fLzb1VBkY///vVfEbpnNT4//576p+rk9LMfv/6RoocAWCIAAAAgEQAAQCIAAHiNZ+gCAPAD+5PKwtL3yX7Xi+2k2oNEACAsnK4hmPui2pJM0hZJTJVpnMt2YrgzABAm6N2kw9J1pkhGKvqsxbbH4uH9ogiWCACEi2WF65JL8lDV+MlCSNpoWLY7l+28FDWPO4UlAgAhmSeL+5fliEQG7Ha01o68jAprg0QAICArxceHgjsDAAFAWh9j8VA/RFkl+t9S8W3NFFVAKdGtCrZgKKaSiYeyBwnfk6yPiD9D1k4mf89KbafisdAT1VnJVZAXJAIAfmEolTYq/Z8qj0gKfFYikEI8FCS6ZoJQZHMsHk/0+8tVkZ8/YItGBWhVMSKFA6Edvi4/r476pLYv+bv0fBTkHdMuDkgEADwzOkT1O1lkXZxVbPHS7xSMnZfIhSyJY/kz1q0KxhFbE9Ma8Q9lfZzIz860+8+Z8IYgEQDwC+oAcj0OsmCX44nCVxCEQsbWyHgFIU1rBlCH2nPo7U4REwEAP1HYJJRxvGOygjTKMNmBIYuDDlOfsZuVlb+/ikQmv/z8W27bC6GUEfj8/PtYPOy7W/mumO/A1n2fB/LIxLfV31Xx5ZUkUvf+kiwK2Qad7TNjy+aY2yV3iAK3i1UkQj7QwQ6MwXhH5AT6SSC0kH1i94QOKqN09UL7+6oCykZbxRxvmTNhkYEwZb2hJLgJ3BkACBcqLpGUYyO8LesUvLW8YNeGXC561ydCshkAhG1JixWuS+rKXaKdGLZ6dOTKrQeJAEC4ULGNmbI8KPjJ27tTR20QGR2x6xKpNsRjnkkOEgGAQMGxCkoAo6DqF46BUI7JMZMIxUomDduYam180Nqg309UYPVwh8ch08wyVygwvQFLkC6aBj1jjk/EmnVCKenLisxX1Uax4RmKFW2obeSC27j/3P8FGAD6mpF/pdXqbwAAAABJRU5ErkJggg==">
+      </div>
+      <div class="title-container">
+        <h3>{{ options.headerTitle }}</h3>
+        <h4>Planning Soutenance - Session {{ options.scholarSeason }} - {{ options.rncpTitle }} / {{ options.rncpTitle }}</h4>
+      </div>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>DATES & LIEUX</th>
+          <th>INFORMATIONS PRATIQUES</th>
+        </tr>
+
+        <!-- loop bagian ini. background colornya dibuat selang seling antara #ffffff sama #d3dfef -->
+        {{#each options.juryMembers as |juryMember|}}
+          <tr>
+            <td class="left-data">
+              <p>{{ juryMember.dateStart }}</p>
+              <p>{{ juryMember.school.longName }}</p>
+            </td>
+            <td>
+              <div class="right-data">
+                <p>Adresse : {{ juryMember.school.schoolAddress.address1 }}</p>
+              </div>
+              {{#each juryMember.juryLogisticId.schoolContacts as |contact|}}
+                  <div class="right-data">
+                    <p>Votre contact sur place :</p>
+                  <p>{{ contact.civility }} {{ contact.firstName }} {{ contact.lastName }}</p>
+                  <p>Mail: {{ contact.email }}</p>
+                  <p>Téléphone : {{ contact.phone }}</p>
+                </div>
+              {{/each}}
+              {{#each juryMember.juryLogisticId.accomodations as |accomodation|}}
+                <div class="right-data">
+                  <p>Hébergement : </p>  
+                  <p>du {{ accomodation.accomodationCheckInDate }} au {{ accomodation.accomodationCheckOutDate }}</p>
+                  <p>{{ accomodation.accomodationHotelName }} {{ accomodation.accomodationHotelInfo }}</p>
+                  <p>Adresse : {{ accomodation.accomodationHotelAddress }}</p>
+                  <p>Référence Réservation  : {{ accomodation.accomodationBookingRef }}</p>
+                  <p>Lien : {{ accomodation.accomodationGoogleLink }}</p>
+                  <p>Informations : {{ accomodation.accomodationHotelInfo }}</p>
+                </div>
+              {{/each}}
+              {{#each juryMember.juryLogisticId.transports as |transport|}}
+                <div class="right-data">
+                  <p>Transports :</p>
+                  <p>Transport  : {{ transport.transportType }}</p>
+                  <p>Départ : {{ transport.transportDateOfDeparture }} {{ transport.transportPlaceOfDeparture }}</p>
+                  <p>Arrivée : {{ transport.transportDateOfArrival }} {{ transport.transportPlaceOfArrival }}</p>
+                  <p>Référence Réservation  : {{ transport.transportBookingRef }}</p>
+                  <p>Instruction pour le transfert {{ transport.transportInstructions }}</p>
+                </div>
+              {{/each}}
+            </td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</body>
+</html>

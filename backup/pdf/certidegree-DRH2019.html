@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pdf</title>
+  <style>
+    @font-face {
+      font-family: "BerkeleyStd-Black";
+      src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Black.otf") format("opentype")
+    }
+    @font-face {
+      font-family: "BerkeleyStd-Bold";
+      src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Bold.otf") format("opentype")
+    }
+    @font-face {
+      font-family: "BerkeleyStd-Medium";
+      src: url("{{options.API_BASE}}assets/fonts/BerkeleyStd/BerkeleyStd-Medium.otf") format("opentype")
+    }
+    .container {
+      height: 579px;
+      width: 819px;
+      margin: auto;
+      font-family: "BerkeleyStd-Bold", sans-serif;
+      font-size: 13px;
+    }
+    .container-background {
+      background-image: url("{{options.API_BASE}}assets/DRH_background_sign_NEW.jpg"); 
+      background-size: 100%;
+      height: inherit;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .top-field {
+      position: absolute;
+      top: 46%;
+      left: 4%;
+    }
+    .bot-field {
+      position: absolute;
+      top: 61.5%;
+      left: 4%;
+    }
+    p {
+      margin: 4px 0;
+      color: #3d368f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container-background">
+      <div class="top-field">
+          <p>à {{options.salutary}} {{options.studentName}}</p>
+          <p>{{options.middleSalutation}} {{options.dateOfBirth}} à {{options.placeOfBirth}}</p>
+        </div>
+        <div class="bot-field">
+          <p>à Paris, le 31 Juillet 2019</p>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

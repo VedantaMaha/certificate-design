@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pdf</title>
+  <style>
+    @font-face {
+      font-family: "ItcAvantGardeStd-Bold";
+      src: url("{{options.API_BASE}}assets/fonts/ITCAVANTGARDESTD/ITCAVANTGARDESTD-BOLD.OTF") format("opentype")
+    }
+    @font-face {
+      font-family: "ItcAvantGardeStd-Medium";
+      src: url("{{options.API_BASE}}assets/fonts/ITCAVANTGARDESTD/ITCAVANTGARDESTD-MD.OTF") format("opentype")
+    }
+    @font-face {
+      font-family: "ItcAvantGardeStd-Light";
+      src: url("{{options.API_BASE}}assets/fonts/ITCAVANTGARDESTD/ITCAVANTGARDESTD-BK.OTF") format("opentype")
+    }
+    .container {
+      height: 579px;
+      width: 819px;
+      margin: auto;
+    }
+    .container-background {
+      background-image: url("{{options.API_BASE}}assets/RAB_background.jpg"); 
+      background-size: 100%;
+      height: inherit;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .certificate-date-field {
+      position: absolute;
+      top: 24%;
+      left: 38%;
+      color: #47c3c5;
+      font-size: 9px;
+      font-family: "ItcAvantGardeStd-Medium", sans-serif;
+    }
+    .title-field {
+      position: absolute;
+      top: 27.6%;
+      left: 48%;
+      width: 380px;
+      text-align: center;
+      line-height: 1.4;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: "ItcAvantGardeStd-Bold", sans-serif;
+    }
+    .first-field {
+      position: absolute;
+      top: 44%;
+      left: 48%;
+      font-size: 20px;
+      text-align: center;
+      width: 380px;
+      font-family: "ItcAvantGardeStd-Bold", sans-serif;
+    }
+    .second-field {
+      position: absolute;
+      top: 56.5%;
+      left: 45%;
+      max-width: 295px;
+      font-size: 14px;
+      font-weight: 200;
+      font-family: "ItcAvantGardeStd-Bold", sans-serif;
+    }
+    .date-field {
+      position: absolute;
+      top: 67.3%;
+      left: 28%;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: "ItcAvantGardeStd-Bold", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container-background">
+      <!-- <div class="title-field">
+        <p>{{options.salutary}} {{options.studentName}}</p>
+      </div> -->
+      <div class="first-field">
+        <p>{{options.salutary}} {{options.studentName}}</p>
+      </div>
+      <div class="second-field">
+        <p>{{options.middleSalutation}} {{options.dateOfBirth}}</p>
+      </div>
+      <div class="date-field">
+        <p>23 Juillet 2019</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

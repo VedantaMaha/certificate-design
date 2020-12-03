@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pdf</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .container {
+      height: 579px;
+      width: 819px;
+      margin: auto;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container-background {
+      background-image: url("{{options.API_BASE}}assets/MPI_background_sign_no_text.jpg"); 
+      background-size: 100%;
+      height: inherit;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .first-field {
+      position: absolute;
+      top: 49%;
+      left: 17%;
+      font-size: 20px;
+    }
+    .second-field {
+      position: absolute;
+      top: 56%;
+      left: 33%;
+      font-size: 12px;
+    }
+    .third-field {
+      position: absolute;
+      top: 67%;
+      left: 30%;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container-background">
+      <div class="first-field">
+        <p>a été attribuée à {{options.salutary}} {{options.studentName}}</p>
+      </div>
+      <div class="second-field">
+        <p>{{options.middleSalutation}} {{options.dateOfBirth}} à {{options.placeOfBirth}}</p>
+      </div>
+      <div class="third-field">
+        <p>Fait à Paris, le 02 Octobre 2019</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

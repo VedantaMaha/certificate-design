@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pdf</title>
+  <style>
+    @font-face {
+      font-family: "ItcAvantGardeStd-Bold";
+      src: url("{{options.API_BASE}}assets/fonts/ITCAVANTGARDESTD/ITCAVANTGARDESTD-BOLD.OTF") format("opentype")
+    }
+    @font-face {
+      font-family: "ItcAvantGardeStd-Medium";
+      src: url("{{options.API_BASE}}assets/fonts/ITCAVANTGARDESTD/ITCAVANTGARDESTD-MD.OTF") format("opentype")
+    }
+    @font-face {
+      font-family: "ItcAvantGardeStd-Light";
+      src: url("{{options.API_BASE}}assets/fonts/ITCAVANTGARDESTD/ITCAVANTGARDESTD-BK.OTF") format("opentype")
+    }
+    .container {
+      height: 579px;
+      width: 819px;
+      margin: auto;
+    }
+    .container-background {
+      background-image: url("{{options.API_BASE}}assets/CPC_background_no_text.jpg"); 
+      background-size: 100%;
+      height: inherit;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .certificate-date-field {
+      position: absolute;
+      top: 24%;
+      left: 38%;
+      color: #47c3c5;
+      font-size: 9px;
+      font-family: "ItcAvantGardeStd-Medium", sans-serif;
+    }
+    .first-field {
+      position: absolute;
+      top: 49%;
+      left: 40%;
+      font-size: 24px;
+      font-family: "ItcAvantGardeStd-Bold", sans-serif;
+    }
+    .second-field {
+      position: absolute;
+      top: 56%;
+      left: 40%;
+      font-family: "ItcAvantGardeStd-Bold", sans-serif;
+    }
+    .salutation {
+      font-size: 15px;
+    }
+    .date-of-birth {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container-background">
+      <div class="first-field">
+        <p>{{options.salutary}} {{options.studentName}}</p>
+      </div>
+      <div class="second-field">
+        <p><span class="salutation">{{options.middleSalutation}}</span> <span class="date-of-birth">{{options.dateOfBirth}}</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

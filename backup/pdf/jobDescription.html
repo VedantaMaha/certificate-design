@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>pdf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .border {
+    border: 2px solid black;
+  }
+
+  .section {
+    margin-top: 1em;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .two-column {
+    float: left;
+    width: 50%;
+  }
+
+  .one-column {
+    float: left;
+    width: 50%;
+  }
+
+  .thrree-column {
+    float: left;
+    width: 33.33%;
+  }
+
+  .onethird-column {
+    float: left;
+    width: 33.33%;
+  }
+
+  .twothird-column {
+    float: left;
+    width: 66.66%;
+  }
+
+  .question {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .answer {
+    font-size: 17px;
+    margin: 0;
+    font-weight: bold;
+    word-wrap: break-word;
+  }
+
+  .padding-left-10 {
+    padding-left: 10px;
+  }
+
+   .padding-10 {
+    padding: 10px;
+  }
+
+  .padding-left-20 {
+    padding-left: 20px;
+  }
+
+  .signature {
+    font-size: 20px;
+  }
+
+  .status-card {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 60px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 15px;
+    padding-right: 15px;
+    height: 64px;
+  }
+
+  .tick {
+    font-size: 2em;
+  }
+
+  .section-heading {
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <!-- Title -->
+    <h1 style="text-align: center">{{options.statics.titles.pdfTitle}}</h1>
+
+    <!-- Zeroth Section - Status -->
+    <div class="section">
+      <div class="row">
+        <div class="onethird-column">
+          <div class="status-card">
+            <div class="twothird-column">
+              {{options.statics.section0.status.sentToStudent.line1}}
+              <br> {{options.statics.section0.status.sentToStudent.line2}}
+            </div>
+            <div class="onethird-column tick">
+              {{#if options.answers.section0.status.sentToStudent}} &#10004; {{else}} &#10008; {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="onethird-column">
+          <div class="status-card">
+            <div class="twothird-column">
+              {{options.statics.section0.status.sentToSchool.line1}}
+              <br> {{options.statics.section0.status.sentToSchool.line2}}
+            </div>
+            <div class="onethird-column tick">
+              {{#if options.answers.section0.status.sentToSchool}} &#10004; {{else}} &#10008; {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="onethird-column">
+          <div class="status-card">
+            <div class="twothird-column">
+              {{options.statics.section0.status.validatedByAcadDept.line1}}
+              <br>{{options.statics.section0.status.validatedByAcadDept.line2}}
+            </div>
+            <div class="onethird-column tick">
+              {{#if options.answers.section0.status.validatedByAcadDept}} &#10004; {{else}} &#10008; {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- First Section - Student Details -->
+    <div class="section">
+      <div class="row border">
+        <div class="two-column padding-left-10">
+          <p>
+            <b>{{options.statics.section1.student}}:</b> Mr Schoolone Studentone
+          </p>
+
+          <p>
+            <b>{{options.statics.section1.school}}:</b> Schoolone
+          </p>
+
+          <p>
+            <b>{{options.statics.section1.rncpTitle}}:</b> RNCP Title 1
+          </p>
+        </div>
+        <div class="two-column padding-left-10">
+          <p>
+            <b>{{options.statics.section1.company}}:</b> comp1
+          </p>
+
+          <p>
+            <b>{{options.statics.section1.mentor}}:</b> Mr Mentor compone
+          </p>
+
+          <p>
+            <b>{{options.statics.section1.class}}:</b> Class one
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Section - Job Details -->
+    <div class="section">
+      <div class="border">
+
+        <!-- Job Identity -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <p class="section-heading">{{options.statics.section2.titles.jobIdentity}}</p>
+          </div>
+          <div class="twothird-column padding-left-10">
+            <p class="question">{{options.statics.section2.questions.jobName}}</p>
+            <p class="answer">{{options.answers.section2.jobName}}</p>
+          </div>
+        </div>
+
+        <!-- Dates of the mission -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <p class="section-heading">{{options.statics.section2.titles.datesOfMission}}</p>
+          </div>
+          <div class="twothird-column padding-left-10">
+            <div class="two-column">
+              <p class="question">{{options.statics.section2.questions.from}}</p>
+              <p class="answer">{{options.answers.section2.from}}</p>
+            </div>
+            <div class="two-column">
+              <p class="question">{{options.statics.section2.questions.to}}</p>
+              <p class="answer">{{options.answers.section2.to}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Presentation of the Department -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <p class="section-heading">{{options.statics.section2.titles.presentationOfDept}}</p>
+          </div>
+          <div class="twothird-column padding-left-10">
+            <div class="two-column">
+              <p class="question">{{options.statics.section2.questions.mainMissionOfDept}}</p>
+              <p class="answer">{{options.answers.section2.mainMissionOfDept}}</p>
+            </div>
+            <div class="two-column">
+              <p class="question">{{options.statics.section2.questions.orgOfDept}}</p>
+              <p class="answer">{{options.answers.section2.orgOfDept}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Missions -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <p class="section-heading">{{options.statics.section2.titles.jobMissions}}</p>
+          </div>
+          <div class="twothird-column padding-left-10">
+            <p class="question">{{options.statics.section2.questions.mainMission}}</p>
+            <p class="answer">{{options.answers.section2.mainMission}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Third Section - Mission Details -->
+    <div class="section">
+      <div class="border">
+
+        <!-- Missions Activities Autonomy -->
+        <div class="row">
+          <p class="padding-left-10 section-heading">{{options.statics.section3.titles.misActAuto}}</p>
+        </div>
+
+        <!-- Answers -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <p class="question">{{options.statics.section3.questions.missions}}</p>
+            <p class="answer">{{options.answers.section3.missions}}</p>
+          </div>
+          <div class="onethird-column padding-left-10">
+            <p class="question">{{options.statics.section3.questions.activities}}</p>
+            <p class="answer">{{options.answers.section3.activities}}</p>
+          </div>
+          <div class="onethird-column padding-left-10">
+            <p class="question">{{options.statics.section3.questions.autonomyLevel}}</p>
+            <p class="answer">{{options.answers.section3.autonomyLevel}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Fourth Section - Required Knowledge -->
+    <div class="section">
+      <div class="border">
+
+        <!-- Required Competencies For This Job -->
+        <div class="row">
+          <p class="padding-left-10 section-heading">{{options.statics.section4.titles.reqCompetencies}}</p>
+        </div>
+
+        <!-- Job profile - Required knowledge -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <h3>{{options.statics.section4.titles.jobProfile}}</h3>
+          </div>
+          <div class="twothird-column padding-left-10">
+            <p class="question">{{options.statics.section4.questions.reqKnowledge}}</p>
+            <p class="answer">{{options.answers.section4.reqKnowledge}}</p>
+          </div>
+        </div>
+
+        <!-- Required know how -->
+        <div class="row">
+          <div class="onethird-column padding-left-10">
+            <h3></h3>
+          </div>
+          <div class="twothird-column padding-left-10">
+            <p class="question">{{options.statics.section4.questions.reqKnowHow}}</p>
+            <p class="answer">{{options.answers.section4.reqKnowHow}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Fifth Section - Objectives Of The Job And Expected Contributions Of The Students -->
+    <div class="section">
+      <div class="border">
+
+        <div class="row">
+          <div class="padding-left-10">
+            <p class="section-heading">{{options.statics.section5.titles.objectivesOfJob}}</p>
+          </div>
+        </div>
+
+        <!-- Expected Contributions Objectives From TheStudent -->
+        <div class="row padding-10">
+          <div class="row">
+            <div class="one-column border" style="width: 48%;height: 60%; margin-right: 10px;">
+                <!-- title -->
+                <div class="row">
+                  <div class="padding-left-10">
+                      <p class="question">{{options.statics.section5.titles.objectiveOfDept}}</p>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="two-column padding-left-10">
+                      <p class="question">{{options.statics.section5.questions.objective}}</p>
+                      <p class="answer">{{options.answers.section5.objectiveOfDept}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="two-column border" style="width: 48%;height: 60%; margin-right: 10px;">
+            <!-- title -->
+            <div class="row">
+                <div class="padding-left-10">
+                    <p class="question">{{options.statics.section5.titles.expectedContrib}}</p>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row">
+                <div class="two-column padding-left-10">
+                  <p class="question">{{options.statics.section5.questions.contribution}}</p>
+                  <p class="answer">{{options.answers.section5.contribution}}</p>
+                </div>
+                <div class="two-column padding-left-10">
+                  <p class="question">{{options.statics.section5.questions.objective}}</p>
+                  <p class="answer">{{options.answers.section5.objective}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sixth Section - Signature of the student -->
+    <div class="section">
+      <div class="row padding-left-10">
+        <div class="two-column">
+          <p class="signature padding-left-20">
+            {{#if options.answers.section6.signature.student}} &#10004; {{else}}  &#10005; {{/if}}
+            <span class="padding-left-20">{{options.statics.section6.signature.student}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
