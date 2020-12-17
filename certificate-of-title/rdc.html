@@ -39,7 +39,7 @@
       font-family: 'Roboto', sans-serif;
     }
     .container-background {
-      background-image: url("{{options.API_BASE}}assets/RDC_background_new.jpg"); 
+      background-image: url("../assets/RDC_background_no_journal.jpg"); 
       background-size: 100%;
       height: inherit;
       position: relative;
@@ -68,6 +68,27 @@
       font-size: 18px;
       font-weight: 100;
     }
+    .journal-text {
+      position: absolute;
+      top: 52%;
+      width: 60%;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 100;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+    .signature-text {
+      position: absolute;
+      top: 70%;
+      font-size: 14px;
+      font-weight: 100;
+      left: 20%;
+    }
+    .dotted-underline {
+      border-bottom: 1px dotted black;
+    }
   </style>
 </head>
 <body>
@@ -81,6 +102,12 @@
       </div>
       <div class="second-field font-style-medium">
         <p>{{options.middleSalutation}} {{options.dateOfBirth}} à {{options.placeOfBirth}}</p>
+      </div>
+      <div class="journal-text">
+        <p>{{options.nonVariableTextOne}}</p>
+      </div>
+      <div class="signature-text">
+        <p class="dotted-underline">Philippe THIBERGE</p>
       </div>
     </div>
   </div>
